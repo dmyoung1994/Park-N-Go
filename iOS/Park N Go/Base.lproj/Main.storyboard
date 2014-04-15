@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="T8C-P7-MlN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qGn-7F-ep8">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="T8C-P7-MlN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nnk-gf-4g6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="FpC-gT-cuu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsk-X0-e9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-803" y="52"/>
+        </scene>
+        <!--ParkN Go View Controller - Back-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="Back" id="vXZ-lx-hvc" customClass="ParkNGoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O9B-7E-7tv"/>
+                        <viewControllerLayoutGuide type="bottom" id="TJb-Hu-Gwo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kQG-Oa-YDR">
+                                <rect key="frame" x="0.0" y="109" width="320" height="371"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Find a city" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-eU-mD6">
+                                <rect key="frame" x="0.0" y="65" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="YED-js-Qo4"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Park 'N Go" id="Lsq-R2-LD7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="oy0-zz-aaq">
+                            <connections>
+                                <segue destination="NYl-Ff-YxQ" kind="push" id="wbI-Rm-ts7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <keyCommands/>
+                    <connections>
+                        <outlet property="citySearch" destination="2Hc-eU-mD6" id="Zs0-fw-2kV"/>
+                        <outlet property="parkingMap" destination="kQG-Oa-YDR" id="X1s-cF-HSp"/>
+                        <outlet property="searchDisplayController" destination="wi6-CZ-Jdi" id="OEh-Vl-TfF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Ccb-Tg-teE">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="rD7-zU-p8e"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="JD8-sV-mmg"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="7Nm-jM-6hS"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="khn-MT-eBC"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="wi6-CZ-Jdi">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="7x9-ra-aoH"/>
+                        <outlet property="searchBar" destination="2Hc-eU-mD6" id="uE8-6i-I2f"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="FLc-Qf-qjs"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="Wt2-w0-oYU"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="0j3-we-2DI"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-243" y="-245"/>
+        </scene>
+        <!--Add Spot View Controller - Add A Spot-->
+        <scene sceneID="3r2-lR-S50">
+            <objects>
+                <viewController id="NYl-Ff-YxQ" customClass="AddSpotViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9zZ-4C-wLF"/>
+                        <viewControllerLayoutGuide type="bottom" id="AqT-Oy-nQa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3gQ-H2-7XM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(optional)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AQl-aq-pGe">
+                                <rect key="frame" x="20" y="128" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-WW-NcJ">
+                                <rect key="frame" x="20" y="99" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihy-bR-cUj">
+                                <rect key="frame" x="20" y="180" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem id="cKZ-XL-rtK"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Add A Spot" id="GFP-k0-LMX">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="DRU-l3-1DS"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSF-yU-jI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="226" y="-254"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
