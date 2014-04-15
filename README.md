@@ -1,5 +1,5 @@
 # Park 'N Go
-### The communal parking app
+### The Communal Parking App
 
 ## About
 Park 'N Go was a side project started by my university friend and I aimed at bringing the closes parking (both free and paid) to peopke driving. We started with parking spots only in Toronto, Ontario, but recently expanded with over 20,000 parking spots all across the United States. I build the web app with jQuery UI and custonized it to suit what I needed. Work on Park 'N Go kinda slowed down when I moved out to San Francisco for a 4 month internship, but I'm going to continue working on it with my friend when we get back. Any and all help is appreciated.
@@ -50,4 +50,9 @@ Park 'N Go was a side project started by my university friend and I aimed at bri
 ## Where I Want To Go
 1. Getting the iOS app working.
   * I just mocked up a layout in some spare time that I had. It doesnt do anything except display where you are.
-2. 
+2. People to set up parking social networks in their neighborhoods. 
+  * Possibly even use the classifieds
+3. Provide a cheaper alternitive to live parking data. 
+  * This can be accomplished by doing image processing (maybe detecting an empty square in a parking lot, then pushing that data), or cheap little bluetooth beacons.
+  
+Please do fork the code and help improve it. Currentl parking apps lack the ability for users to add parking spots, which means that they will forever and always show only paid parking. Park 'N Go believes in free parking for all!
